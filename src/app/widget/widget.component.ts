@@ -1,19 +1,16 @@
 import {Component, Input} from '@angular/core';
 import {ExportService} from "./export.service";
+import {WidgetBase} from "./widget-base";
 
 @Component({
   selector: 'app-widget',
   templateUrl: './widget.component.html',
   styleUrls: ['./widget.component.scss']
 })
-export class WidgetComponent {
+export class WidgetComponent extends WidgetBase{
 
-  constructor(
-    private exporter: ExportService
-  ) {
-  }
+  override export() {
+    super.export();
 
-  export() {
-    this.exporter.export()
   }
 }
